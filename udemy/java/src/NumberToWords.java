@@ -4,11 +4,12 @@ public class NumberToWords {
             System.out.println("Invalid Value");
         }
         int numberReversed = 0;
-        int numberOfDigits = 0;
-        while(number >= 0){
+        int numOfDigits = numberOfDigits(number);
+        while(numOfDigits > 0){
             numberReversed += number % 10;
             numberReversed *= 10;
             number /= 10;
+            numOfDigits--;
             switch (numberReversed){
                 case 0:
                     System.out.println("Zero");
@@ -47,5 +48,16 @@ public class NumberToWords {
     }
     public static int reverse (int number){
         return -1;
+    }
+    public static int numberOfDigits(int number){
+        if (number > 0){
+            System.out.println("Invalid Number");
+        }
+        int totalNumberOFDigits = 0;
+        while(number > 0){
+            totalNumberOFDigits++;
+            number /= 10;
+        }
+        return totalNumberOFDigits;
     }
 }
