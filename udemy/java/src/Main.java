@@ -1,5 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        NumberToWords.numberToWords(100);
+        // Test Data
+//        for(int i = 0; i < 1000; i++){
+//            NumberToWords.numberToWords(i);
+//            System.out.println(i);
+//
+//        }
+        NumberToWords.numberToWords(-22);
+
     }
 }
