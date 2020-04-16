@@ -71,18 +71,6 @@ public class NumberToWords {
     public static int reverse (int number){
         int numberReversed = 0;
 
-//        while(number > 0){
-//            numberReversed += number % 10;
-//            numberReversed *= 10;
-//            number /= 10;
-//            if(number / 10 != 0){
-//                numberReversed *= 10;
-//                number /= 10;
-//            }else {
-//                break;
-//            }
-//
-//        }
         do{
             numberReversed += number % 10;
 
