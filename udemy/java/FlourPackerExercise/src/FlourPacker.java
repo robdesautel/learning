@@ -1,18 +1,25 @@
 public class FlourPacker {
     public static boolean canPack(int bigCount, int smallCount, int goal){
         int totalKilos = 0;
-        int remainingBigCount = 0;
-        if((bigCount < 0) || (smallCount < 0)){
+        if((bigCount < 0) || (smallCount < 0) || (goal < 0)){
             return false;
         }
-        while(bigCount > 0){
-            totalKilos += 5;
-            bigCount --;
+        int big=bigCount*5;
+        if(big+smallCount<goal) {
+
+            return false;
         }
-        while (smallCount > 0){
-            totalKilos++;
-            smallCount--;
+        if (big <= goal) {
+
+            return true;
         }
-        return totalKilos >= goal;
+
+        return smallCount >= (goal % 5);
     }
 }
+
+
+//        if(big+smallCount<goal) {
+//
+//            return false;
+//        }
