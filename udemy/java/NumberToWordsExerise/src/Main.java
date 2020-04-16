@@ -6,7 +6,7 @@ public class Main {
 //            System.out.println(i);
 //
 //        }
-        NumberToWords.numberToWords(-22);
+        NumberToWords.numberToWords(22);
 
     }
 }
