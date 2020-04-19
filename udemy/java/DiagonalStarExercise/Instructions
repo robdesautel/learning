@@ -57,7 +57,8 @@ When the column number equals rowCount - currentRow + 1 (where currentRow is cur
 
 HINT: Use a nested loop (a loop inside of a loop).
 
-HINT: To print on the same line, use the print method instead of println, e.g. System.out.print(" "); prints a space and does not "move" to another line.
+HINT: To print on the same line, use the print method instead of println,
+e.g. System.out.print(" "); prints a space and does not "move" to another line.
 
 HINT: To "move" to another line, you can use an empty println call, e.g. System.out.println(); .
 
