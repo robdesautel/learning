@@ -32,14 +32,14 @@ EXAMPLE 2
 
 printSquareStar(8); should print the following:
 
-********
-**    **
-* *  * *
-*  **  *
-*  **  *
-* *  * *
-**    **
-********
+******** 8 stars
+**    ** 2 stars 4 spaces 2 stars
+* *  * * 1 star 1 space 1 star 2 spaces 1 star 1 space 1 star
+*  **  * 1 star 2 spaces 2 stars 2 spaces 1 star
+*  **  * 1 star 2 spaces 2 stars 2 spaces 1 star
+* *  * * 1 star 1 space 1 star 2 spaces 1 star 1 space 1 star
+**    ** 2 stars 4 spaces 2 stars
+******** 8 stars
 
 
 The patterns above consist of a number of rows and columns (where number is the number of rows to print).

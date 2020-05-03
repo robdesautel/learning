@@ -4,12 +4,20 @@ public class DiagonalStar {
         if(number < 5){
             System.out.println("Invalid Value");;
         }
-
-        for (int i = number; i >= 1; i--){
-            for (int j = 1;j <= i; j++){
-                System.out.print("*");
+        int row = 1;
+        int column = 1;
+        int currentRow = 0;
+        for (int i = number; i > 0; i--){ //Initialize loop
+            currentRow++;
+            if (currentRow == 1 || currentRow == number){
+                for (int j = 0; j < number; j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }else {
+                System.out.println("stars");
             }
-            System.out.println();
+
         }
     }
 }
