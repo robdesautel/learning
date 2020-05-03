@@ -5,7 +5,6 @@ public class DiagonalStar {
             System.out.println("Invalid Value");;
         }
         int row = 1;
-        int column = 1;
         int currentRow = 0;
         for (int i = number; i > 0; i--){ //Initialize loop
             currentRow++;
@@ -13,11 +12,25 @@ public class DiagonalStar {
                 for (int j = 0; j < number; j++){
                     System.out.print("*");
                 }
-                System.out.println();
             }else {
-                System.out.println("stars");
+                int column = 1;
+                for(int j = 0; j <= number; j++){
+
+                    if(column == 1 ||
+                       column == currentRow ||
+                       column == number){
+                        System.out.print("*");
+                    }else{
+                        System.out.print(" ");
+                    }
+                    column++;
+                }
+                System.out.print(row);
+
             }
 
+            System.out.println();
+            row++;
         }
     }
 }
