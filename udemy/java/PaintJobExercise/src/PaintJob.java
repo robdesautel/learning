@@ -19,7 +19,7 @@ public class PaintJob {
                                      double height,
                                      double areaPerBucket){
 
-        if(width <= 0 || height <= 0 || areaPerBucket < 1){
+        if(width <= 0 || height <= 0 || areaPerBucket <= 0){
             return -1;
         }
 
