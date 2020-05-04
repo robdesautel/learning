@@ -8,10 +8,25 @@ public class PaintJob {
             return -1;
         }
 
-        float areaOfWall = (float) width * (float) height;
-        float totalPaint = areaOfWall /(float)  areaPerBucket;
-        float numberOfBucketsNeededForJob = totalPaint - extraBuckets;
-        return Math.round(numberOfBucketsNeededForJob);
+        double areaOfWall = width * height;
+        double totalPaint = areaOfWall /areaPerBucket;
+        double numberOfBucketsNeededForJob = totalPaint - extraBuckets;
+        return (int) Math.ceil(numberOfBucketsNeededForJob);
 
     }
+
+    public static int getBucketCount(double width,
+                                     double height,
+                                     double areaPerBucket){
+
+        if(width < 1 || height < 1 || areaPerBucket < 1){
+            return -1;
+        }
+
+        double areaOfWall = width * height;
+        double totalPaint = areaOfWall / areaPerBucket;
+        return (int) Math.ceil(totalPaint);
+
+    }
+
 }
