@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/DiagonalStarExercise/DiagonalStarExercise.iml" filepath="$PROJECT_DIR$/udemy/java/DiagonalStarExercise/DiagonalStarExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/FlourPackerExercise/FlourPackerExercise.iml" filepath="$PROJECT_DIR$/udemy/java/FlourPackerExercise/FlourPackerExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/InputCalculatorExercise/InputCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/InputCalculatorExercise/InputCalculatorExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/LargestPrimeExercise/LargestPrimeExercise.iml" filepath="$PROJECT_DIR$/udemy/java/LargestPrimeExercise/LargestPrimeExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/NumberToWordsExerise/NumberToWordsExerise.iml" filepath="$PROJECT_DIR$/udemy/java/NumberToWordsExerise/NumberToWordsExerise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/PaintJobExercise/PaintJobExercise.iml" filepath="$PROJECT_DIR$/udemy/java/PaintJobExercise/PaintJobExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/DiagonalStarExercise/DiagonalStarExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/DiagonalStarExercise/DiagonalStarExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/FlourPackerExercise/FlourPackerExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/FlourPackerExercise/FlourPackerExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/InputCalculatorExercise/InputCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/InputCalculatorExercise/InputCalculatorExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/LargestPrimeExercise/LargestPrimeExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/LargestPrimeExercise/LargestPrimeExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/NumberToWordsExerise/NumberToWordsExerise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/NumberToWordsExerise/NumberToWordsExerise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/PaintJobExercise/PaintJobExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/PaintJobExercise/PaintJobExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/PersonExercise/PersonExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/PersonExercise/PersonExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/SumCalculatorExercise/SumCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/SumCalculatorExercise/SumCalculatorExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/learning.iml" filepath="$PROJECT_DIR$/learning.iml" />
