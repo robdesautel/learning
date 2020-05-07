@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/CarpetCostCalculator/CarpetCostCalculator.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/CarpetCostCalculator/CarpetCostCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/ComplexOperationsExercise/udemy/java/oop_part1/ComplexOperationsExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/ComplexOperationsExercise/udemy/java/oop_part1/ComplexOperationsExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/DiagonalStarExercise/DiagonalStarExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/DiagonalStarExercise/DiagonalStarExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/FlourPackerExercise/FlourPackerExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/FlourPackerExercise/FlourPackerExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/InputCalculatorExercise/InputCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/InputCalculatorExercise/InputCalculatorExercise.iml" />
