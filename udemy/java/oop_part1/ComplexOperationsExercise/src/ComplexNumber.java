@@ -15,15 +15,22 @@ public class ComplexNumber {
         return this.imaginary;
     }
 
-    public double add(){
-        return 0.0d;
+    public void add(double real, double imaginary){
+        this.real += real;
+        this.imaginary += imaginary;
     }
 
-    public double subtract(){
-        return 0.0d;
+    public void add(ComplexNumber complexNumber){
+        this.add(complexNumber.getReal(), complexNumber.getImaginary());
     }
 
-    public double subtract(){
-        return 0.0d;
+    public void subtract(double real, double imaginary){
+        this.real -= real;
+        this.imaginary -= imaginary;
+    }
+
+    public void subtract(ComplexNumber complexNumber){
+        this.subtract(complexNumber.getReal(), complexNumber.getImaginary());
+
     }
 }
