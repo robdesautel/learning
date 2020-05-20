@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/CarpetCostCalculator/CarpetCostCalculator.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/CarpetCostCalculator/CarpetCostCalculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/ComplexOperationsExercise/udemy/java/oop_part1/ComplexOperationsExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/ComplexOperationsExercise/udemy/java/oop_part1/ComplexOperationsExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/CylinderExercise/udemy/java/oop_part1/CylinderExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/CylinderExercise/udemy/java/oop_part1/CylinderExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/CarpetCostCalculator/CarpetCostCalculator.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/CarpetCostCalculator/CarpetCostCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/ComplexOperationsExercise/udemy/java/oop_part1/ComplexOperationsExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/ComplexOperationsExercise/udemy/java/oop_part1/ComplexOperationsExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/CylinderExercise/udemy/java/oop_part1/CylinderExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/CylinderExercise/udemy/java/oop_part1/CylinderExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/DiagonalStarExercise/DiagonalStarExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/DiagonalStarExercise/DiagonalStarExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/FlourPackerExercise/FlourPackerExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/FlourPackerExercise/FlourPackerExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/InputCalculatorExercise/InputCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/InputCalculatorExercise/InputCalculatorExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/LargestPrimeExercise/LargestPrimeExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/LargestPrimeExercise/LargestPrimeExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/NumberToWordsExerise/NumberToWordsExerise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/NumberToWordsExerise/NumberToWordsExerise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/Control_Flow_Statements/PaintJobExercise/PaintJobExercise.iml" filepath="$PROJECT_DIR$/udemy/java/Control_Flow_Statements/PaintJobExercise/PaintJobExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/PersonExercise/PersonExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/PersonExercise/PersonExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/PointExercise/PointExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/PointExercise/PointExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/PoolAreaExercise/PoolAreaExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/PoolAreaExercise/PoolAreaExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/SumCalculatorExercise/SumCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/SumCalculatorExercise/SumCalculatorExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/udemy/java/oop_part1/WallAreaExercise/WallAreaExercise.iml" filepath="$PROJECT_DIR$/udemy/java/oop_part1/WallAreaExercise/WallAreaExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PersonExercise/PersonExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PersonExercise/PersonExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PointExercise/PointExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PointExercise/PointExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PoolAreaExercise/PoolAreaExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PoolAreaExercise/PoolAreaExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/SumCalculatorExercise/SumCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/SumCalculatorExercise/SumCalculatorExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/WallAreaExercise/WallAreaExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/WallAreaExercise/WallAreaExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/learning.iml" filepath="$PROJECT_DIR$/learning.iml" />
     </modules>
   </component>
