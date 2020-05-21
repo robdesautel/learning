@@ -3,7 +3,7 @@ public class Main {
         Printer laserPrinter = new Printer(50, true);
 
         if (laserPrinter.getHasDuplex()){
-            laserPrinter.duplexPrint(10);
+            laserPrinter.duplexPrint(5);
         }
         System.out.println(laserPrinter.getPagesPrinted() + " Pages printed");
         System.out.println(laserPrinter.getTonerLever() + " Remaining toner");
