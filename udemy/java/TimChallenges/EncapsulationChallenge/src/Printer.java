@@ -8,7 +8,7 @@ public class Printer {
         if(tonerLever > 0 ) {
             this.tonerLever = tonerLever;
         }
-        this.hasDuplex = hasDuplex ;
+        this.hasDuplex = hasDuplex;
     }
 
     private void pagePrinted(int page){
