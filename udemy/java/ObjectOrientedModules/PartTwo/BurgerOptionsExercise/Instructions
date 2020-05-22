@@ -26,17 +26,16 @@ The healthy burger can have a total of 6 items (Additions) in total.
 hint: you probably want to process the 2 additional items in this new class not the base class,
 since the 2 additions are only appropriate for this new class.
 
-b) Deluxe hamburger
-comes with chips
-drinks as additions
+b) Deluxe hamburger comes with
+chips
+drinks
 no extra additions are allowed.
 hint: you have to find a way to automatically add these new additions at the time the deluxe burger
 object is created, and then prevent other additions being made.
 
 All 3 classes should
 have a method that can be called anytime to show the base price of the hamburger
-all additions
-each showing the addition name
+all additions (each showing the addition name)
 and addition price
 and a grand total for the
 burger.

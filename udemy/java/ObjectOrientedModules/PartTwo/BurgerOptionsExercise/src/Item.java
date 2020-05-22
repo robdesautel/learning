@@ -73,9 +73,5 @@ public class Item {
         return price;
     }
 
-    public void server(){
-        System.out.println("Service by manager");
-    }
-
 
 }

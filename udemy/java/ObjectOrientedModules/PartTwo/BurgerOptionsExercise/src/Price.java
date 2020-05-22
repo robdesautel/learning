@@ -2,10 +2,12 @@ public class Price {
     private double subTotal;
     private double salesTax;
     private double grandTotal;
-    private double lettucePrice = 0.5d;
-    private double picklePrice = 0.15d;
-    private double cheesePrice = 1.00d;
-    private double tomatoPrice = 0.25d;
+    private double lettucePrice;
+    private double picklePrice;
+    private double cheesePrice;
+    private double tomatoPrice;
+    private double chipsPrice;
+    private double drinkPrice;
 
     public Price(double salesTax) {
         if(salesTax <= 0.00){
@@ -13,6 +15,12 @@ public class Price {
         }else {
             this.salesTax = salesTax;
         }
+        this.lettucePrice = 0.5d;
+        this.picklePrice = 0.15d;
+        this.cheesePrice = 1.00d;
+        this.tomatoPrice = 0.25d;
+        this.chipsPrice = 0.75d;
+        this.drinkPrice = 1.5;
     }
     public void calculateGrandTotal(){
         grandTotal = subTotal + (subTotal * salesTax);
@@ -29,7 +37,15 @@ public class Price {
         subTotal -= cheesePrice;
     }
     public void subtractTomatoPrice(){
-        subTotal -= this.cheesePrice;
+        subTotal -= tomatoPrice;
+    }
+
+    public void subtractChipPrice(){
+        subTotal -=  chipsPrice;
+    }
+
+    public void subtractDrinkPrice(){
+        subTotal -= drinkPrice;
     }
 
     public void addLettucePrice() {
@@ -45,6 +61,14 @@ public class Price {
     }
     public void addTomatoPrice(){
         subTotal += cheesePrice;
+    }
+
+    public void addChipsPrice(){
+        subTotal += chipsPrice;
+    }
+
+    public void addDrinkPrice(){
+        subTotal += drinkPrice;
     }
 
 

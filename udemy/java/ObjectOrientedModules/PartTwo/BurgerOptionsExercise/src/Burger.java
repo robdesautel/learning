@@ -32,4 +32,8 @@ public class Burger {
         return item.getItemPrices();
     }
 
+    public void customer(){
+        System.out.println("For Customer ---");
+    }
+
 }
