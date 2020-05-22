@@ -5,15 +5,7 @@ public class Item {
     private boolean hasCheese;
     private Price price;
 
-    public Item(boolean hasLettuce,
-                boolean hasTomato,
-                boolean hasPickle,
-                boolean hasCheese,
-                Price price) {
-        this.hasLettuce = hasLettuce;
-        this.hasTomato = hasTomato;
-        this.hasPickle = hasPickle;
-        this.hasCheese = hasCheese;
+    public Item(Price price) {
         this.price = price;
     }
 

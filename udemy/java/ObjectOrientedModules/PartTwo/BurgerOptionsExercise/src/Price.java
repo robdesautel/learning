@@ -22,7 +22,9 @@ public class Price {
         this.chipsPrice = 0.75d;
         this.drinkPrice = 1.5d;
         this.subTotal = 2.5d;
-    }    public void calculateGrandTotal(){
+    }
+
+    public void calculateGrandTotal(){
         grandTotal = subTotal + (subTotal * salesTax);
     }
     public void subtractLettucePrice() {
@@ -71,16 +73,17 @@ public class Price {
         subTotal += drinkPrice;
     }
 
-
     public double getSubTotal() {
         return subTotal;
     }
+
 
     public double getSalesTax() {
         return salesTax;
     }
 
     public double getGrandTotal() {
+        calculateGrandTotal();
         return grandTotal;
     }
 
