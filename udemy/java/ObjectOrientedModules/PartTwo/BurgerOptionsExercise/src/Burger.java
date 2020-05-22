@@ -32,6 +32,10 @@ public class Burger {
         return item.getItemPrices();
     }
 
+    public double basicBurgerPrice(){
+        return this.priceOfAdditions().getSubTotal();
+    }
+
     public void customer(){
         System.out.println("For Customer ---");
     }

@@ -33,8 +33,8 @@ no extra additions are allowed.
 hint: you have to find a way to automatically add these new additions at the time the deluxe burger
 object is created, and then prevent other additions being made.
 
-All 3 classes should
-have a method that can be called anytime to show the base price of the hamburger
+All 3 classes should have a method that can be called anytime to show
+the base price of the hamburger
 all additions (each showing the addition name)
 and addition price
 and a grand total for the

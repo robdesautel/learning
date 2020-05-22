@@ -20,9 +20,9 @@ public class Price {
         this.cheesePrice = 1.00d;
         this.tomatoPrice = 0.25d;
         this.chipsPrice = 0.75d;
-        this.drinkPrice = 1.5;
-    }
-    public void calculateGrandTotal(){
+        this.drinkPrice = 1.5d;
+        this.subTotal = 2.5d;
+    }    public void calculateGrandTotal(){
         grandTotal = subTotal + (subTotal * salesTax);
     }
     public void subtractLettucePrice() {
