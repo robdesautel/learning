@@ -1,23 +1,13 @@
-public class ContactName {
-    private ContactNumber contactNumber;
-    private String firstName;
-    private String lastName;
+import java.util.ArrayList;
 
-    public ContactName(ContactNumber contactNumber, String firstName, String lastName) {
-        this.contactNumber = contactNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
+public class ContactName{
+
+    public void addFirstName(ArrayList<String> arrayList, String first){
+        arrayList.add(first);
     }
 
-    public ContactNumber getContactNumber() {
-        return contactNumber;
+    public void addLastName(ArrayList<String> arrayList, String last){
+        arrayList.add(last);
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
 }
