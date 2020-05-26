@@ -1,73 +1,94 @@
 import java.lang.invoke.LambdaConversionException;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 
-public class Contact extends ContactName{
-    private ArrayList<String> contactList = new ArrayList<>();
+public class Contact{
+    private String myNumber;
+    private ArrayList<ContactName> contactList;
 
-    public void setFirstName(String firstName){
-        int index = search(firstName);
-        if(index < 0) {
-            this.addFirstName(contactList, firstName);
+    public Contact(String myNumber) {
+        this.myNumber = myNumber;
+        this.contactList = new ArrayList<>();
+    }
+
+    public boolean addNewContact(ContactName contactName){
+        if(findContact(contactName.getFirstName()) >= 0){
+            System.out.println("Contact already exists!");
+            return false;
         }
+        contactList.add(contactName);
+        return true;
     }
 
-    public void setLastName(String lastName){
-        int index = search(lastName);
-        if(index < 0 ) {
-            this.addLastName(contactList, lastName);
+    private int findContact(ContactName contactName){
+        return this.contactList.indexOf(contactName);
+    }
+
+    private int findContact(String firstName) {
+        /* TODO: add more searching parameters
+        */
+        for(int i = 0; i < contactList.size(); i++){
+            ContactName contactName = this.contactList.get(i);
+            if(contactName.getFirstName().equals(firstName)){
+                return i;
+            }
         }
+        return -1;
     }
 
-    public void addCellPhone(String cellPhone){
-        int index = search(cellPhone);
-        if(index < 0) {
-            contactList.add(cellPhone);
+    public boolean remove(ContactName contactRecord){
+        int index = findContact(contactRecord.getFirstName());
+        if(index < 0){
+            System.out.println(contactRecord.getFirstName() + ", is not in the list.");
+            return false;
         }
+        this.contactList.remove(index);
+//        System.out.println(contactRecord.getFirstName() + " was removed or the list");
+        return true;
     }
 
-    public void modifyItem(String itemName, String newItem){
-        int index = search(itemName);
-        if (index >= 0){
-            modifyItem(index, newItem);
+    public boolean modifyContact(ContactName oldContact, ContactName newContact){
+        /* TODO:
+            add more validation for fields.
+            add more functionality for field updates.
+         */
+        int index = findContact(oldContact.getFirstName());
+        if(index < 0){
+            System.out.println(oldContact.getFirstName() + ", is not in the list.");
+            return false;
         }
+        contactList.set(index, newContact);
+        System.out.println(oldContact.getFirstName() + " was replaced by " + newContact.getFirstName());
+        return true;
     }
 
-    private void modifyItem(int index, String newItem){
-        contactList.set(index, newItem);
-        System.out.println("Item has been changed to " + newItem);
-    }
-
-    public void removeItem(String itemName){
-        int index = search(itemName);
-        if(index >= 0){
-            removeItem(index);
+    public String queryContact(ContactName contactName){
+        if (findContact(contactName) >= 0){
+            return contactName.getFirstName();
         }
+        return null;
     }
 
-    private void removeItem(int index){
-        contactList.remove(index);
-        System.out.println("Item has been removed.");
-    }
+    public ContactName queryContact(String firstName){
+        /* TODO:
+            query for additional fields.
+         */
 
-    public void searchItem (String item){
-        int index = search(item);
-        if(index >= 0){
-            System.out.println(item + " is in the list.");
-        }else {
-            System.out.println(item + " is not in the list.");
+        int index = findContact(firstName);
+        if(index >= 0 ){
+            return this.contactList.get(index);
         }
+        return null;
     }
 
-    private int search(String item){
-        return contactList.indexOf(item);
-    }
-
-    public void printItems() {
+    public void printContacts(){
         int i = 1;
-        for(String item: contactList){
-            System.out.println(i + " " + item);
+        for(ContactName contactName: contactList ){
+            System.out.println(i + contactName.getFirstName() + ", " +
+                                contactName.getLastName() + " => " +
+                                contactName.getPhoneNumber());
             i++;
         }
-
     }
+
 }

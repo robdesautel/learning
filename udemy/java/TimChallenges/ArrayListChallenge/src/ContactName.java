@@ -2,12 +2,30 @@ import java.util.ArrayList;
 
 public class ContactName{
 
-    public void addFirstName(ArrayList<String> arrayList, String first){
-        arrayList.add(first);
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+
+    public ContactName(String firstName, String lastName, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
     }
 
-    public void addLastName(ArrayList<String> arrayList, String last){
-        arrayList.add(last);
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public static ContactName createContact(String firstName, String lastName, String phoneNumber){
+        return new ContactName(firstName, lastName, phoneNumber);
     }
 
 }
