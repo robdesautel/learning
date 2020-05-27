@@ -1,14 +1,13 @@
 Your job is to create a simple banking application.
-There should be a Bank class
-It should have an arraylist of Branches
+There should be a Bank class it should have an arraylist of Branches
 Each Branch should have an arraylist of Customers
 The Customer class should have an arraylist of doubles (transactions)
 Customer:
     name(first, last)
-    arraylist of doubles
+    arraylist of doubles(deposit, withdraw, currentBalance)
 Branch:
     add new customer with initial transaction(deposit)
-    add additional transactions for that customer/branch (Loans?)
+    add additional transactions for that customer/branch
 Bank:
     add new branch
     add a customer to a branch with initial transaction
@@ -19,5 +18,5 @@ Demonstration autoboxing and unboxing in your code.
 Hint:
 Transaction
 add data validation.
-e.g. check if exists, or doe not exist, etc.
+e.g. check if exists, or does not exist, etc.
 Think about where you are adding the code to perform certain actions.

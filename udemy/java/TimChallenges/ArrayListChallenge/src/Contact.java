@@ -21,6 +21,7 @@ public class Contact{
     }
 
     private int findContact(ContactName contactName){
+
         return this.contactList.indexOf(contactName);
     }
 
