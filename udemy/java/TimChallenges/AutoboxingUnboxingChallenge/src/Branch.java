@@ -28,14 +28,22 @@ public class Branch{
         return false;
     }
 
-    public boolean addTransaction(String customerName, double amount){
+    public boolean addCustomerDeposit(String customerName, double amount){
         Customer existingCustomer = findCustomer(customerName);
         if(existingCustomer != null){
-            existingCustomer.addTransaction(amount);
-            return true;
+            return existingCustomer.addCustomerDeposit(amount);
         }
         return false;
     }
+
+    public boolean addCustomerWithdraw(String customerName, double amount){
+        Customer existingCustomer = findCustomer(customerName);
+        if(existingCustomer != null){
+            return existingCustomer.addCustomerWithdraw(amount);
+        }
+        return false;
+    }
+
 
     private Customer findCustomer(String customerName){
         for(Customer customer: this.customers){

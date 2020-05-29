@@ -27,14 +27,23 @@ public class Bank {
         return false;
     }
 
-    public boolean addCustomerTransaction(String branchName, String customerName, double transaction){
+    public boolean customerDeposit(String branchName, String customerName, double transaction){
         Branch branch = findBranch(branchName);
         if(branch != null){
-            branch.addTransaction(customerName, transaction);
-            return true;
+            return branch.addCustomerDeposit(customerName, transaction);
         }
         return false;
     }
+
+    public boolean customerWithdraw(String branchName, String customerName, double transaction){
+        Branch branch = findBranch(branchName);
+        if(branch != null){
+            return branch.addCustomerWithdraw(customerName, transaction);
+        }
+        return false;
+    }
+
+
 
     private Branch findBranch(String branchName){
         for(Branch branch : branches){
@@ -45,26 +54,46 @@ public class Bank {
         return null;
     }
 
-    public boolean customerTransaction(String branchName, boolean showTransaction){
+    public void customerTransaction(String branchName){
         Branch branch = findBranch(branchName);
-            if(branch != null){
-                System.out.println("Customer details for branch " + branch.getName());
 
-                ArrayList<Customer> branchCustomers = branch.getCustomers();
-                for(Customer customer: branchCustomers){
-                    System.out.println("Customer: " + customer.getName());
-                    if(showTransaction){
-                        System.out.println("Transactions");
-                        ArrayList<Double> customerTransactions = customer.getTransactions();
-                        for(int i = 0; i < customerTransactions.size(); i++){
-                            System.out.println("[ " + (i + 1) + " ] Amount: " + customerTransactions.get(i) );
-                        }
-                    }
-                }
-                return true;
-            } else {
-                return false;
+        if (branch != null){
+            System.out.println("Customer details for branch " + branch.getName());
 
+            ArrayList<Customer> branchCustomers = branch.getCustomers();
+            for(Customer customer: branchCustomers) {
+                System.out.println("Customer: " + customer.getName());
+                System.out.println("Transactions:");
+                customer.getCustomerDeposits();
+                customer.getCustomerWithdraws();
             }
+        }
+
     }
 }
+
+
+//    public boolean customerTransaction(String branchName, boolean showTransaction){
+//        Branch branch = findBranch(branchName);
+//            if(branch != null){
+//                System.out.println("Customer details for branch " + branch.getName());
+//
+//                ArrayList<Customer> branchCustomers = branch.getCustomers();
+//                for(Customer customer: branchCustomers){
+//                    System.out.println("Customer: " + customer.getName());
+//                    if(showTransaction){
+//                        System.out.println("Transactions");
+//                        ArrayList<Double> customerTransactions = customer.getTransactions();
+//                        for(int i = 0; i < customerTransactions.size(); i++){
+//                            System.out.println("[ " + (i + 1) + " ] Amount: " + customerTransactions.get(i) );
+//                        }
+//                    }
+//                }
+//                return true;
+//            } else {
+//                return false;
+//
+//            }
+//    }
+
+
