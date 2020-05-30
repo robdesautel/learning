@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-//I over complicated this had to watch the video.
 public class Customer {
     private String name;
-//    private ArrayList<Double> transactions;
     private double currentBalance;
     private Transaction transaction;
 
@@ -20,11 +17,30 @@ public class Customer {
     }
 
     public boolean addCustomerDeposit(double customerDeposit){
-        return this.transaction.customerDeposit(customerDeposit);
+        if( this.transaction.customerDeposit(customerDeposit)) {
+            this.currentBalance += customerDeposit;
+            return true;
+        }
+        return false;
     }
 
     public boolean addCustomerWithdraw(double customerWithdraw){
-        return this.transaction.customerWithdraw(customerWithdraw);
+        if(this.transaction.customerWithdraw(customerWithdraw)){
+            this.currentBalance -= customerWithdraw;
+            return true;
+        }
+        return false;
+    }
+
+
+    public void getCustomerDeposits(){
+        for(int i = 0; i < this.transaction.getDeposits().size(); i++)
+            System.out.println("Deposits made " + this.transaction.getDeposits().get(i));
+    }
+
+    public void getCustomerWithdraws(){
+        for(int i = 0; i < this.transaction.getWithdraws().size(); i++)
+            System.out.println("Withdraws made " + this.transaction.getWithdraws().get(i));
     }
 
     public String getName() {
@@ -35,19 +51,5 @@ public class Customer {
         return currentBalance;
     }
 
-    public void getCustomerDeposits(){
-        for(int i = 0; i < this.transaction.getDeposits().size(); i++)
-            System.out.println("Deposits made " + this.transaction.getDeposits().get(i));
-    }
-
-    public void getCustomerWithdraws(){
-        for(int i = 0; i < this.transaction.getWithdraws().size(); i++)
-            System.out.println("Deposits made " + this.transaction.getWithdraws().get(i));
-    }
-
-
-//    public ArrayList<Double> getTransactions() {
-//        return transactions;
-//    }
 }
 

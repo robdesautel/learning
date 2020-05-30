@@ -1,4 +1,3 @@
-import org.graalvm.compiler.asm.sparc.SPARCAssembler;
 
 import java.util.ArrayList;
 
@@ -30,7 +29,7 @@ public class Bank {
     public boolean customerDeposit(String branchName, String customerName, double transaction){
         Branch branch = findBranch(branchName);
         if(branch != null){
-            return branch.addCustomerDeposit(customerName, transaction);
+            return branch.addDeposit(customerName, transaction);
         }
         return false;
     }
@@ -42,8 +41,6 @@ public class Bank {
         }
         return false;
     }
-
-
 
     private Branch findBranch(String branchName){
         for(Branch branch : branches){
@@ -70,6 +67,14 @@ public class Bank {
         }
 
     }
+    public void customerAccountBalance(String branchName, String customerName){
+        Branch branch = findBranch(branchName);
+        if(branch != null){
+            double balance = branch.getCustomerCurrentBalance(customerName);
+            System.out.println(customerName + "'s current balance is " + balance);
+        }
+    }
+
 }
 
 

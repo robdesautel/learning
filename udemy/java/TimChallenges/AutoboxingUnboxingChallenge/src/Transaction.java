@@ -5,9 +5,9 @@ public class Transaction {
     private ArrayList<Double> withdraws;
 
     public Transaction(double initialDeposit) {
-        addInitialDeposit(initialDeposit);
         this.deposits = new ArrayList<>();
         this.withdraws = new ArrayList<>();
+        addInitialDeposit(initialDeposit);
     }
 
     private void addInitialDeposit(double initialDeposit) {

@@ -1,6 +1,3 @@
-import org.graalvm.compiler.asm.sparc.SPARCAssembler;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Branch{
@@ -12,14 +9,6 @@ public class Branch{
         this.customers = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public ArrayList<Customer> getCustomers() {
-        return customers;
-    }
-
     public boolean createCustomer(String customerName, double initialAmount){
         if(findCustomer(customerName) == null){
             this.customers.add(new Customer(customerName, initialAmount));
@@ -28,7 +17,7 @@ public class Branch{
         return false;
     }
 
-    public boolean addCustomerDeposit(String customerName, double amount){
+    public boolean addDeposit(String customerName, double amount){
         Customer existingCustomer = findCustomer(customerName);
         if(existingCustomer != null){
             return existingCustomer.addCustomerDeposit(amount);
@@ -52,6 +41,22 @@ public class Branch{
             }
         }
         return null;
+    }
+
+    public double getCustomerCurrentBalance(String customerName){
+        Customer customer = findCustomer(customerName);
+        if(customer != null){
+            return customer.getCurrentBalance();
+        }
+        return -1;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
     }
 
 }
