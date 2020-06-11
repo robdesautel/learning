@@ -5,59 +5,77 @@ public class Album {
     private String albumName;
     private LinkedList<Song> songs;
 
-    public Album(String albumName, Song song) {
+    public Album(String albumName) {
         this.albumName = albumName;
         this.songs = new LinkedList<>();
-        addNewSong(song);
     }
 
     public void addNewSong(Song song){
         ListIterator songIterator = songs.listIterator();
-        if(findSong(song) < 0){
+        Song existingSong = findSong(song);
+        if(existingSong == null){
             songIterator.add(song);
         }
+    }
+    public boolean updateSong(Song currentSong, String newSongTitle){
+         Song song = findSong(currentSong.getSongTitle());
+         if(song != null){
+             song.setSongTitle(newSongTitle);
+             return true;
+         }
+         return false;
+    }
+
+    public boolean updateSong(Song currentSong, double songDuration){
+        Song song = findSong(currentSong.getSongTitle());
+        if(song != null){
+            song.setSongDuration(songDuration);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean updateSong(Song currentSong, String newSongTitle, double songDuration){
+        Song song = findSong(currentSong.getSongTitle());
+        if(song != null) {
+            song.setSongTitle(newSongTitle);
+            song.setSongDuration(songDuration);
+            return true;
+        }
+        return false;
     }
 
     public void updateSong(String oldSongTitle, String newSongTitle){
         Song song = findSong(oldSongTitle);
         song.setSongTitle(newSongTitle);
-        songIteratorUpdate(song);
     }
 
     public void updateSong(String oldSongTitle, double songDuration){
         Song song = findSong(oldSongTitle);
         song.setSongDuration(songDuration);
-        songIteratorUpdate(song);
     }
 
     public void updateSong(String oldSongTitle, String newSongTitle, double songDuration){
         Song song = findSong(oldSongTitle);
         song.setSongTitle(newSongTitle);
         song.setSongDuration(songDuration);
-        songIteratorUpdate(song);
     }
 
-    private void songIteratorUpdate(Song song){
-        ListIterator songIterator = this.songs.listIterator();
-        for(int i = 0; i < this.songs.size(); i++){
-            if(i == this.songs.indexOf(song)){
-                songIterator.set(song);
-            }else {
-                songIterator.next();
+    public boolean removeSong(Song song){
+        Song existingSong = findSong(song);
+        if(existingSong != null) {
+            ListIterator songIterator = this.songs.listIterator();
+            int i = 0;
+            while (songIterator.hasNext()) {
+                Song x = (Song) songIterator.next();
+                if (x.getSongTitle().equals(song.getSongTitle())) {
+                    songIterator.remove();
+                    return true;
+                }
+                i++;
             }
         }
-    }
-
-    public void removeSong(String songTitle){
-        Song song = findSong(songTitle);
-        ListIterator songIterator = this.songs.listIterator();
-        for(int i = 0; i < this.songs.size(); i++){
-            if(i == this.songs.indexOf(song)){
-                songIterator.remove();
-            }else {
-                songIterator.next();
-            }
-        }
+        return false;
     }
 
     private Song findSong(String songTitle) {
@@ -69,10 +87,12 @@ public class Album {
         return null;
     }
 
-    private int findSong(Song song) {
-        return this.songs.indexOf(song);
+    private Song findSong(Song song) {
+        if(this.songs.contains(song)){
+            return song;
+        }
+        return null;
     }
-
 
     public LinkedList<Song> getSongs(){
         return this.songs;
@@ -82,7 +102,7 @@ public class Album {
         return albumName;
     }
 
-//    public void setAlbumName(String albumName) {
-//        this.albumName = albumName;
-//    }
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
 }

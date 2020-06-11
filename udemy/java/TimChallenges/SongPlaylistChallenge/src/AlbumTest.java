@@ -6,11 +6,12 @@ class AlbumTest {
     void addSongToNewAlbum(){
 
         Album lifeAlbum = new Album("Life's Journey");
+        Song today = new Song("Today", 2.56);
 
-        assertTrue(lifeAlbum.addNewSong("Today", 2.56));
+        lifeAlbum.addNewSong(today);
 
         //does not add a duplicate song title
-        assertFalse(lifeAlbum.addNewSong("Today", 2.56));
+        lifeAlbum.addNewSong(today);
     }
 
     @org.junit.jupiter.api.Test
@@ -18,12 +19,17 @@ class AlbumTest {
 
         Album lifeAlbum = new Album("Life's Journey");
 
-        assertTrue(lifeAlbum.addNewSong("Today", 2.56));
-        assertTrue(lifeAlbum.addNewSong("Tomorrow", 3.51));
-        assertTrue(lifeAlbum.addNewSong("Yesterday", 1.56));
-        assertTrue(lifeAlbum.addNewSong("Next Week", 5.30));
+        Song today = new Song("Today", 2.56);
+        Song tomorrow = new Song("Tomorrow", 3.51);
+        Song yesterday = new Song("Yesterday", 1.56);
+        Song nextWeek = new Song("Next Week", 5.30);
 
-        lifeAlbum.removeSong("Next Week");
+        lifeAlbum.addNewSong(today);
+        lifeAlbum.addNewSong(tomorrow);
+        lifeAlbum.addNewSong(yesterday);
+        lifeAlbum.addNewSong(nextWeek);
+
+        lifeAlbum.removeSong(nextWeek);
         assertEquals(3, lifeAlbum.getSongs().size());
     }
 
@@ -32,10 +38,11 @@ class AlbumTest {
 
         Album lifeAlbum = new Album("Life's Journey");
 
-        assertTrue(lifeAlbum.addNewSong("Today", 2.56));
-        assertTrue(lifeAlbum.addNewSong("Tomorrow", 3.51));
-        assertTrue(lifeAlbum.addNewSong("Yesterday", 1.56));
-        assertTrue(lifeAlbum.addNewSong("Next Week", 5.30));
+        Song today = new Song("Today", 2.56);
+        Song tomorrow = new Song("Tomorrow", 3.51);
+        Song yesterday = new Song("Yesterday", 1.56);
+        Song nextWeek = new Song("Next Week", 5.30);
+
 
         //update the song Title
         lifeAlbum.updateSong("Next Week", "Last Week");

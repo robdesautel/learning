@@ -10,22 +10,75 @@ public class Playlist {
         this.albums = new ArrayList<>();
     }
 
-    public boolean createNewAlbum(Album album){
+    public boolean addNewAlbum(Album album){
         ListIterator albumIterator = this.albums.listIterator();
-        if (findAlbum(album) < 0){
+        if (findAlbum(album) == null && album.getSongs().size() > 0){
             albumIterator.add(album);
             return true;
         }
         return false;
     }
 
-    public void addSongToAlbum(Album album){
+    public boolean addSongToAlbum(String albumName, Song song){
         ListIterator albumIterator = this.albums.listIterator();
-        int existingAlbum = findAlbum(album);
-        if (existingAlbum < 0){
-            albumIterator.add(album);
+        Album existingAlbum = findAlbum(albumName);
+        if (existingAlbum != null){
+            existingAlbum.addNewSong(song);
+            albumIterator.add(existingAlbum);
+            return true;
         }
+        return false;
     }
+
+    public boolean updateAlbum(Album currentAlbum, Song currentSong, String newSongTitle){
+        Album album = findAlbum(currentAlbum.getAlbumName());
+        if(album != null){
+            return album.updateSong(currentSong, newSongTitle);
+        }
+        return false;
+    }
+
+    public boolean updateAlbum(Album currentAlbum, Song currentSong, double newSongDuration){
+        Album album = findAlbum(currentAlbum.getAlbumName());
+        if(album != null){
+            return album.updateSong(currentSong, newSongDuration);
+        }
+        return false;
+    }
+
+    public boolean updateAlbum(Album currentAlbum, Song currentSong, String newSongTitle, double newSongDuration){
+        Album album = findAlbum(currentAlbum.getAlbumName());
+        if(album != null){
+            return album.updateSong(currentSong, newSongTitle, newSongDuration);
+        }
+        return false;
+    }
+
+    public boolean removeSongFromAlbum(Album album, Song song){
+        Album existingAlbum = findAlbum(album.getAlbumName());
+        if(existingAlbum != null){
+            return existingAlbum.removeSong(song);
+        }
+        return false;
+    }
+
+    public boolean removeAlbum(Album album){
+        Album existingAlbum = findAlbum(album);
+        if(existingAlbum != null) {
+            ListIterator albumIterator = this.albums.listIterator();
+            int i = 0;
+            while (albumIterator.hasNext()) {
+                Album x = (Album) albumIterator.next();
+                if (x.getAlbumName().equals(album.getAlbumName())) {
+                    albumIterator.remove();
+                    return true;
+                }
+                i++;
+            }
+        }
+        return false;
+    }
+
 
     private Album findAlbum(String albumName) {
         for(Album album: this.albums){
@@ -36,7 +89,10 @@ public class Playlist {
         return null;
     }
 
-    private int findAlbum(Album album) {
-        return this.albums.indexOf(album);
+    private Album findAlbum(Album album) {
+        if(this.albums.contains(album)){
+            return album;
+        }
+        return null;
     }
 }
