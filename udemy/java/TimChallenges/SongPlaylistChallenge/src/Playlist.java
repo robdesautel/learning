@@ -66,6 +66,25 @@ public class Playlist {
         return false;
     }
 
+
+    public boolean removeAlbum(String albumName){
+        Album existingAlbum = findAlbum(albumName);
+        if(existingAlbum != null) {
+            ListIterator albumIterator = this.albums.listIterator();
+            int i = 0;
+            while (albumIterator.hasNext()) {
+                Album x = (Album) albumIterator.next();
+                if (x.getAlbumName().equals(albumName)) {
+                    albumIterator.remove();
+                    return true;
+                }
+                i++;
+            }
+        }
+        return false;
+    }
+
+
     public boolean removeAlbum(Album album){
         Album existingAlbum = findAlbum(album);
         if(existingAlbum != null) {
@@ -91,6 +110,10 @@ public class Playlist {
             }
         }
         return null;
+    }
+
+    public ArrayList<Album> getAlbums() {
+        return albums;
     }
 
     private Album findAlbum(Album album) {
