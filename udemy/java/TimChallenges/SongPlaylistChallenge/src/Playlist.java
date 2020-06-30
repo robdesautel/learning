@@ -10,6 +10,10 @@ public class Playlist {
         this.albums = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean addNewAlbum(Album album){
         ListIterator albumIterator = this.albums.listIterator();
         if (findAlbum(album) == null && album.getSongs().size() > 0){
@@ -95,4 +99,5 @@ public class Playlist {
         }
         return null;
     }
+
 }
