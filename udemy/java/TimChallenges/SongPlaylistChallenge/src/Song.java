@@ -25,7 +25,4 @@ public class Song {
         return songDuration;
     }
 
-//    public static Song createSong(String songTitle, double songDuration){
-//        return new Song(songTitle, songDuration);
-//    }
 }
