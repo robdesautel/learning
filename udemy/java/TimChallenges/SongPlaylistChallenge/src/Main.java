@@ -20,9 +20,10 @@ public class Main {
         System.out.println("Select an option from the menu.");
         System.out.println("1 - Open playlist\n" +
                             "2 - Add a playlist\n" +
-                            "3 - Quit\r");
+                            "3 - Play playlist" +
+                            "4 - Quit\r");
         int userInput = 0;
-        while (userInput != 3) {
+        while (userInput != 4) {
             userInput = scanner.nextInt();
             switch (userInput) {
                 case 1:
@@ -32,6 +33,9 @@ public class Main {
                     addPlaylist();
                     break;
                 case 3:
+                    playPlaylist();
+                    break;
+                case 4:
                     System.out.println("exiting playlist");
                     break;
                 default:
@@ -39,6 +43,23 @@ public class Main {
                     break;
             }
         }
+    }
+
+    private static void playPlaylist() {
+        scanner = new Scanner(System.in);
+        System.out.println("Which playlist would you like to play?");
+        try {
+            int index = 1;
+            for(Playlist playlist : myPlaylist){
+                System.out.println(index + " " + playlist.getName());
+            }
+        }catch (NullPointerException e){
+            System.out.println("There are no playlists available.");
+        }
+
+        int userInput = scanner.nextInt();
+        Playlist playlist = myPlaylist.get(userInput);
+        playlistMenu(playlist);
     }
 
     private static void addPlaylist() {
@@ -71,7 +92,8 @@ public class Main {
         System.out.println("1 - Add a album\n" +
                             "2 - Remove album\n" +
                             "3 - Modify album\n" +
-                            "4 - Quit\r");
+                            "4 - Play Album" +
+                            "5 - Quit\r");
 
         int userInput = 0;
         while (userInput != 4 ) {
@@ -87,6 +109,8 @@ public class Main {
                     modifyAlbum(playlist);
                     break;
                 case 4:
+                    playAlbum(playlist);
+                case 5:
                     System.out.println("finished adding albums");
                     break;
                 default:
@@ -95,6 +119,18 @@ public class Main {
             }
         }
         mainMenu();
+    }
+
+    private static void playAlbum(Playlist playlist) {
+        scanner = new Scanner(System.in);
+        System.out.println("Which album would you like to play today");
+        int index = 1;
+        for (Album album : playlist.getAlbums()){
+            System.out.println(index + " " + album.getAlbumName());
+        }
+        int userInput = scanner.nextInt();
+        Album album = playlist.getAlbums().get(userInput - 1);
+        albumMenu(album);
     }
 
     private static void addAlbum(Playlist playlist) {
@@ -147,9 +183,10 @@ public class Main {
                             "2 - Edit song name\n" +
                             "3 - Edit song duration\n" +
                             "4 - Remove song from album\n" +
-                            "5 - Quit");
+                            "5 - Play song\n" +
+                            "6 - Quit");
         int userInput = 0;
-        while (userInput != 5){
+        while (userInput != 6){
             userInput = scanner.nextInt();
             switch (userInput){
                 case 1:
@@ -164,7 +201,53 @@ public class Main {
                 case 4:
                     removeSong(album);
                 case 5:
+                    playSong(album);
+                case 6:
                     System.out.println("Completed editing Album");
+                    break;
+                default:
+                    System.out.println("Please select a valid entry");
+                    break;
+            }
+        }
+        mainMenu();
+    }
+
+    private static void playSong(Album album) {
+        scanner = new Scanner(System.in);
+        boolean movingForward = false;
+        System.out.println("Play album\n" +
+                            "N - skip to next song\n" +
+                            "L - previous song\n" +
+                            "R - repeat song\n" +
+                            "Q - quit playing songs");
+        ListIterator songIterator = album.getSongs().listIterator();
+        String userInput = "";
+        while (!userInput.toUpperCase().equals("Q")){
+            userInput = scanner.nextLine();
+            switch (userInput.toUpperCase()){
+                case "N":
+                    if (songIterator.hasNext()){
+                        movingForward = true;
+                        songIterator.next();
+                    }
+                    break;
+                case "L":
+                    if (songIterator.hasPrevious()){
+                        if (movingForward){
+                            movingForward = false;
+                        }
+                        songIterator.previous();
+                    }
+                    break;
+                case "R":
+                    if (movingForward){
+                        movingForward = false;
+                    }
+                    System.out.println("Repeating song");
+                    break;
+                case "Q":
+                    System.out.println("Stop playing music");
                     break;
                 default:
                     System.out.println("Please select a valid entry");
@@ -182,7 +265,7 @@ public class Main {
             System.out.println(index + " " + song.getSongTitle() + ": " + song.getSongDuration());
         }
         int userInput = scanner.nextInt();
-        Song song = album.getSongs().get(userInput);
+        Song song = album.getSongs().get(userInput - 1);
         album.removeSong(song);
     }
 
@@ -194,7 +277,7 @@ public class Main {
             System.out.println(index + " " + song.getSongTitle() + ": " + song.getSongDuration());
         }
         int userInput = scanner.nextInt();
-        Song song = album.getSongs().get(userInput);
+        Song song = album.getSongs().get(userInput - 1);
         System.out.println("New song duration");
         double newSongDuration = scanner.nextDouble();
         song.setSongDuration(newSongDuration);
@@ -210,7 +293,7 @@ public class Main {
             System.out.println(index + " " + song.getSongTitle() + ": " + song.getSongDuration());
         }
         int userInput = scanner.nextInt();
-        Song song = album.getSongs().get(userInput);
+        Song song = album.getSongs().get(userInput - 1);
         System.out.println("New song title");
         String newSongTitle = scanner.nextLine();
         song.setSongTitle(newSongTitle);
