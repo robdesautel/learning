@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner;
     private static Playlist playlist;
     private static Song song;
     private static Album album;
@@ -13,6 +13,7 @@ public class Main {
         mainMenu();
     }
     private static void mainMenu(){
+        scanner = new Scanner(System.in);
         System.out.println("Select an option from the menu.");
         System.out.println("1 - Open playlist\n" +
                             "2 - Add a playlist\n" +
@@ -40,8 +41,9 @@ public class Main {
     }
 
     private static void removeAlbum(Playlist playlist) {
+        scanner = new Scanner(System.in);
         System.out.println("Enter album name to remove");
-        String albumName = scanner.next();
+        String albumName = scanner.nextLine();
         if(!playlist.removeAlbum(albumName)){
             System.out.println("Album " + albumName + " does not exist");
             return;
@@ -55,8 +57,9 @@ public class Main {
 
 
     private static void addPlaylist() {
+        scanner = new Scanner(System.in);
         System.out.println("Enter your playlist name");
-        String myPlaylistName = scanner.next();
+        String myPlaylistName = scanner.nextLine();
         playlist = new Playlist(myPlaylistName);
         myPlaylist = new LinkedList<>();
         myPlaylist.add(playlist);
@@ -113,13 +116,14 @@ public class Main {
     }
 
     private static void addAlbum(Playlist playlist) {
+        scanner = new Scanner(System.in);
         System.out.println("Enter album name");
-        scanner.next();
         String albumName = scanner.nextLine();
         System.out.println("Add new song to album");
         String songName = scanner.nextLine();
         System.out.println("Duration of song");
         double songDuration = scanner.nextDouble();
+
         album = new Album(albumName);
         song = new Song(songName, songDuration);
         playlist.addNewAlbum(album);

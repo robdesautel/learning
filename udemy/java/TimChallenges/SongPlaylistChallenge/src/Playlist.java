@@ -16,7 +16,7 @@ public class Playlist {
 
     public boolean addNewAlbum(Album album){
         ListIterator albumIterator = this.albums.listIterator();
-        if (findAlbum(album) == null && album.getSongs().size() > 0){
+        if (findAlbum(album) == null && album.getSongs().size() <= 0){
             albumIterator.add(album);
             return true;
         }
