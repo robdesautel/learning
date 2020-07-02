@@ -125,11 +125,11 @@ public class Main {
         scanner = new Scanner(System.in);
         System.out.println("Which album would you like to play today");
         int index = 1;
-        for (Album album : playlist.getAlbums()){
+        for (Album album : playlist.albums()){
             System.out.println(index + " " + album.getAlbumName());
         }
         int userInput = scanner.nextInt();
-        Album album = playlist.getAlbums().get(userInput - 1);
+        Album album = playlist.albums().get(userInput - 1);
         albumMenu(album);
     }
 
@@ -144,7 +144,7 @@ public class Main {
 
         album = new Album(albumName);
         song = new Song(songName, songDuration);
-        playlist.addNewAlbum(album);
+        playlist.addAlbum(album);
         playlist.addSongToAlbum(albumName, song);
         playlistMenu(playlist);
     }
@@ -166,12 +166,12 @@ public class Main {
         scanner = new Scanner(System.in);
         System.out.println("Which album would you like to edit");
         int index = 1;
-        for(Album album : playlist.getAlbums()){
+        for(Album album : playlist.albums()){
             System.out.print( index + " " + album.getAlbumName());
             index++;
         }
         int albumIndex = scanner.nextInt();
-        Album album = playlist.getAlbums().get(albumIndex);
+        Album album = playlist.albums().get(albumIndex);
         albumMenu(album);
     }
 
