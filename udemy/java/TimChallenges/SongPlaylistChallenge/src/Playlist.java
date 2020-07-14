@@ -1,6 +1,3 @@
-import sun.awt.image.ImageWatched;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -17,15 +14,15 @@ public class Playlist {
     public String getName() {
         return name;
     }
-    public boolean addAlbum(Album album){
-        return albums.addNewAlbum(new Album(album.getAlbumName()));
+
+    public List<Album> addAlbum(String albumName){
+        return (albums.addNewAlbum(new Album(albumName)));
     }
 
-    public boolean addSongToAlbum(String albumName, Song song){
+    public boolean addSongToAlbum(Album album, String songTitle, double songDuration){
         ListIterator albumIterator = this.albums.getAlbums().listIterator();
-        Album existingAlbum = this.albums.findAlbum(albumName);
-        if (existingAlbum != null && existingAlbum.addNewSong(song)){
-            albumIterator.add(existingAlbum);
+        if (this.albums.findAlbum(album) && album.addNewSong(songTitle, songDuration)){
+            albumIterator.add(album);
             return true;
         }
         return false;
@@ -80,10 +77,8 @@ public class Playlist {
         return false;
     }
 
-
     public boolean removeAlbum(Album album){
-        Album existingAlbum = this.albums.findAlbum(album);
-        if(existingAlbum != null) {
+        if(this.albums.findAlbum(album)) {
             ListIterator albumIterator = this.albums.getAlbums().listIterator();
             int i = 0;
             while (albumIterator.hasNext()) {
@@ -102,7 +97,6 @@ public class Playlist {
         return this.albums.getAlbums();
     }
 
-
     private class AlbumList{
         LinkedList<Album> albums;
 
@@ -110,22 +104,20 @@ public class Playlist {
             this.albums = new LinkedList<>();
         }
 
-        private boolean addNewAlbum(Album album){
+        private List<Album> addNewAlbum(Album album){
             ListIterator albumIterator = this.albums.listIterator();
-            if (findAlbum(album) == null && album.getSongs().size() <= 0){
+            if (!findAlbum(album)){
                 albumIterator.add(album);
-                return true;
-            }
-            return false;
-        }
-
-
-        private Album findAlbum(Album album) {
-            if(this.albums.contains(album)){
-                return album;
+                return this.albums;
             }
             return null;
         }
+
+
+        private boolean findAlbum(Album album) {
+            return this.albums.contains(album);
+        }
+
         private Album findAlbum(String albumName) {
             for(Album album: this.albums){
                 if(album.getAlbumName().equals(albumName)){

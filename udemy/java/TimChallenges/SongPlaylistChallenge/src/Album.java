@@ -1,4 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.ARETURN;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -11,8 +10,8 @@ public class Album {
         this.albumName = albumName;
         this.songs = new SongList();
     }
-    public boolean addNewSong(Song song){
-        return this.songs.add(new Song(song.getSongTitle(), song.getSongDuration()));
+    public boolean addNewSong(String songTitle, double songDuration){
+        return this.songs.add(new Song(songTitle, songDuration));
     }
 
     public boolean updateSong(Song currentSong, String newSongTitle){

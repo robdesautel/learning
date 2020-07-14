@@ -144,8 +144,8 @@ public class Main {
 
         album = new Album(albumName);
         song = new Song(songName, songDuration);
-        playlist.addAlbum(album);
-        playlist.addSongToAlbum(albumName, song);
+//        playlist.addAlbum(album, song);
+//        playlist.addSongToAlbum(albumName, song);
         playlistMenu(playlist);
     }
 
