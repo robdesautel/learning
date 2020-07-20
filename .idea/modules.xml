@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/VideoExamples/Adventure/Adventure.iml" filepath="$PROJECT_DIR$/udemy/java/VideoExamples/Adventure/Adventure.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/TimChallenges/ArrayListChallenge/ArrayListChallenge.iml" filepath="$PROJECT_DIR$/udemy/java/TimChallenges/ArrayListChallenge/ArrayListChallenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/TimChallenges/AutoboxingUnboxingChallenge/AutoboxingUnboxingChallenge.iml" filepath="$PROJECT_DIR$/udemy/java/TimChallenges/AutoboxingUnboxingChallenge/AutoboxingUnboxingChallenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartTwo/BurgerOptionsExercise/BurgerOptionsExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartTwo/BurgerOptionsExercise/BurgerOptionsExercise.iml" />
@@ -24,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PoolAreaExercise/PoolAreaExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/PoolAreaExercise/PoolAreaExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/TimChallenges/SongPlaylistChallenge/SongPlaylistChallenge.iml" filepath="$PROJECT_DIR$/udemy/java/TimChallenges/SongPlaylistChallenge/SongPlaylistChallenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/SumCalculatorExercise/SumCalculatorExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/SumCalculatorExercise/SumCalculatorExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udemy/java/VideoExamples/TheaterSeatsExercise/TheaterSeatsExercise.iml" filepath="$PROJECT_DIR$/udemy/java/VideoExamples/TheaterSeatsExercise/TheaterSeatsExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/TimChallenges/VehiclePolymorphismChallenge/VehiclePolymorphismChallenge.iml" filepath="$PROJECT_DIR$/udemy/java/TimChallenges/VehiclePolymorphismChallenge/VehiclePolymorphismChallenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/WallAreaExercise/WallAreaExercise.iml" filepath="$PROJECT_DIR$/udemy/java/ObjectOrientedModules/PartOne/WallAreaExercise/WallAreaExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/learning.iml" filepath="$PROJECT_DIR$/learning.iml" />
