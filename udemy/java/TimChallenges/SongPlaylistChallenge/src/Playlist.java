@@ -19,8 +19,8 @@ public class Playlist {
         return (albums.addNewAlbum(new Album(albumName)));
     }
 
-    public boolean addSongToAlbum(Album album, String songTitle, double songDuration){
-        Album currentAlbum = this.albums.findAlbum(album.getAlbumName());
+    public boolean addSongToAlbum(String albumName, String songTitle, double songDuration){
+        Album currentAlbum = this.albums.findAlbum(albumName);
         if (currentAlbum != null){
             return currentAlbum.addNewSong(songTitle, songDuration);
         }
