@@ -20,7 +20,6 @@ public class Playlist {
     }
 
     public boolean addSongToAlbum(Album album, String songTitle, double songDuration){
-//        ListIterator albumIterator = this.albums.getAlbums().listIterator();
         Album currentAlbum = this.albums.findAlbum(album.getAlbumName());
         if (currentAlbum != null){
             return currentAlbum.addNewSong(songTitle, songDuration);
