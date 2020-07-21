@@ -7,11 +7,17 @@ class PlaylistTest {
 //
     @org.junit.jupiter.api.Test
     void addAlbumToPlaylist(){
+        Album currentAlbum = null;
         Playlist playlist = new Playlist("Travel List");
         List<Album> lifeAlbum = playlist.addAlbum("Life's Journey");
-        Album album = lifeAlbum.
-        if(lifeAlbum != null) {
-            playlist.addSongToAlbum(lifeAlbum, "Today", 2.56);
+        for (Album album : lifeAlbum ){
+            if(album.getAlbumName().equals("Life's Journey")){
+                currentAlbum = album;
+                break;
+            }
+        }
+        if(currentAlbum != null) {
+            playlist.addSongToAlbum(currentAlbum, "Today", 2.56);
         }
     }
 
