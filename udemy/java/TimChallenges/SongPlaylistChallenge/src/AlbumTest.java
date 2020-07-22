@@ -39,7 +39,7 @@ class AlbumTest {
 //        lifeAlbum.addNewSong(yesterday);
 //        lifeAlbum.addNewSong(nextWeek);
 
-        lifeAlbum.removeSong(nextWeek);
+        lifeAlbum.removeSong("Next Week");
         assertEquals(3, lifeAlbum.getSongs().size());
     }
 

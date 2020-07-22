@@ -1,5 +1,6 @@
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 
 public class Album {
@@ -14,8 +15,8 @@ public class Album {
         return this.songs.add(new Song(songTitle, songDuration));
     }
 
-    public boolean updateSong(Song currentSong, String newSongTitle){
-         Song song = songs.findSong(currentSong.getSongTitle());
+    public boolean updateSong(String songTitle, String newSongTitle){
+         Song song = songs.findSong(songTitle);
          if(song != null){
              song.setSongTitle(newSongTitle);
              return true;
@@ -23,8 +24,8 @@ public class Album {
          return false;
     }
 
-    public boolean updateSong(Song currentSong, double songDuration){
-        Song song = songs.findSong(currentSong.getSongTitle());
+    public boolean updateSong(String songTitle, double songDuration){
+        Song song = songs.findSong(songTitle);
         if(song != null){
             song.setSongDuration(songDuration);
             return true;
@@ -32,8 +33,8 @@ public class Album {
         return false;
     }
 
-    public boolean updateSong(Song currentSong, String newSongTitle, double songDuration){
-        Song song = songs.findSong(currentSong.getSongTitle());
+    public boolean updateSong(String songTitle, String newSongTitle, double songDuration){
+        Song song = songs.findSong(songTitle);
         if(song != null) {
             song.setSongTitle(newSongTitle);
             song.setSongDuration(songDuration);
@@ -42,14 +43,14 @@ public class Album {
         return false;
     }
 
-    public boolean removeSong(Song song){
-        Song existingSong = songs.findSong(song);
+    public boolean removeSong(String songTitle){
+        Song existingSong = songs.findSong(songTitle);
         if(existingSong != null) {
             ListIterator songIterator = songs.songs.listIterator();
             int i = 0;
             while (songIterator.hasNext()) {
                 Song nextSong = (Song) songIterator.next();
-                if (nextSong.getSongTitle().equals(song.getSongTitle())) {
+                if (nextSong.getSongTitle().equals(songTitle)) {
                     songIterator.remove();
                     return true;
                 }
@@ -58,6 +59,20 @@ public class Album {
         }
         return false;
     }
+
+    public void removeSong(List<Song> songs){
+        ListIterator songIterator = songs.listIterator();
+        while (songIterator.hasNext()) {
+            Song nextSong = (Song) songIterator.next();
+            for(Song song: songs){
+                if (nextSong.getSongTitle().equals(song.getSongTitle())) {
+                    songIterator.remove();
+                    break;
+                }
+            }
+        }
+    }
+
 
     public LinkedList<Song> getSongs(){
         return songs.getSongs();

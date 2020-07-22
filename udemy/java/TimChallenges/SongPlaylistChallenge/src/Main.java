@@ -266,7 +266,7 @@ public class Main {
         }
         int userInput = scanner.nextInt();
         Song song = album.getSongs().get(userInput - 1);
-        album.removeSong(song);
+        album.removeSong(song.getSongTitle());
     }
 
     private static void editSongDuration(Album album) {

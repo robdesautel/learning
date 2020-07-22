@@ -27,50 +27,50 @@ public class Playlist {
         return false;
     }
 
-    public boolean updateAlbum(Album currentAlbum, Song currentSong, String newSongTitle){
-        Album album = this.albums.findAlbum(currentAlbum.getAlbumName());
+    public boolean updateAlbum(String albumName, String oldSongTitle, String newSongTitle){
+        Album album = this.albums.findAlbum(albumName);
         if(album != null){
-            return album.updateSong(currentSong, newSongTitle);
+            return album.updateSong(oldSongTitle, newSongTitle);
         }
         return false;
     }
 
-    public boolean updateAlbum(Album currentAlbum, Song currentSong, double newSongDuration){
-        Album album = this.albums.findAlbum(currentAlbum.getAlbumName());
+    public boolean updateAlbum(String albumName, String oldSongTitle, double newSongDuration){
+        Album album = this.albums.findAlbum(albumName);
         if(album != null){
-            return album.updateSong(currentSong, newSongDuration);
+            return album.updateSong(oldSongTitle, newSongDuration);
         }
         return false;
     }
 
-    public boolean updateAlbum(Album currentAlbum, Song currentSong, String newSongTitle, double newSongDuration){
-        Album album = this.albums.findAlbum(currentAlbum.getAlbumName());
+    public boolean updateAlbum(String albumName, String oldSongTitle, String newSongTitle, double newSongDuration){
+        Album album = this.albums.findAlbum(albumName);
         if(album != null){
-            return album.updateSong(currentSong, newSongTitle, newSongDuration);
+            return album.updateSong(oldSongTitle, newSongTitle, newSongDuration);
         }
         return false;
     }
 
-    public boolean removeSongFromAlbum(Album album, Song song){
-        Album existingAlbum = this.albums.findAlbum(album.getAlbumName());
+    public boolean removeSongFromAlbum(String albumName, String songTitle){
+        Album existingAlbum = this.albums.findAlbum(albumName);
         if(existingAlbum != null){
-            return existingAlbum.removeSong(song);
+            return existingAlbum.removeSong(songTitle);
         }
         return false;
     }
+
 
     public boolean removeAlbum(String albumName){
         Album existingAlbum = this.albums.findAlbum(albumName);
         if(existingAlbum != null) {
             ListIterator albumIterator = this.albums.getAlbums().listIterator();
-            int i = 0;
             while (albumIterator.hasNext()) {
                 Album x = (Album) albumIterator.next();
                 if (x.getAlbumName().equals(albumName)) {
+                    x.removeSong(x.getSongs());
                     albumIterator.remove();
                     return true;
                 }
-                i++;
             }
         }
         return false;
