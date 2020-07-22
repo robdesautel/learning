@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner;
     private static Playlist playlist;
-    private static Song song;
-    private static Album album;
     private static LinkedList<Playlist> myPlaylist;
 
     public static void main(String[] args) {
@@ -20,7 +18,7 @@ public class Main {
         System.out.println("Select an option from the menu.");
         System.out.println("1 - Open playlist\n" +
                             "2 - Add a playlist\n" +
-                            "3 - Play playlist" +
+                            "3 - Play playlist\n" +
                             "4 - Quit\r");
         int userInput = 0;
         while (userInput != 4) {
@@ -88,11 +86,12 @@ public class Main {
     }
 
     private static void playlistMenu(Playlist playlist){
+
         System.out.println("Select what you want to do with the playlist");
         System.out.println("1 - Add a album\n" +
                             "2 - Remove album\n" +
                             "3 - Modify album\n" +
-                            "4 - Play Album" +
+                            "4 - Play Album\n" +
                             "5 - Quit\r");
 
         int userInput = 0;
@@ -142,10 +141,16 @@ public class Main {
         System.out.println("Duration of song");
         double songDuration = scanner.nextDouble();
 
-        album = new Album(albumName);
-        song = new Song(songName, songDuration);
-//        playlist.addAlbum(album, song);
-//        playlist.addSongToAlbum(albumName, song);
+        List<Album> albums = playlist.addAlbum(albumName);
+        playlist.addSongToAlbum(albumName, songName, songDuration);
+
+        for(Album album : albums){
+            System.out.println(album.getAlbumName());
+            for (Song song : album.getSongs()){
+                System.out.println("\t" + song.getSongTitle() + ": " + song.getSongDuration() + " has been added");
+            }
+        }
+
         playlistMenu(playlist);
     }
 
@@ -171,7 +176,7 @@ public class Main {
             index++;
         }
         int albumIndex = scanner.nextInt();
-        Album album = playlist.albums().get(albumIndex);
+        Album album = playlist.albums().get(albumIndex-1);
         albumMenu(album);
     }
 
